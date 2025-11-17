@@ -4,22 +4,22 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Новиков — Лендинг (BEM)</title>
-  <meta name="description" content="Лендинг с использованием методологии БЭМ — пример структуры и стилизации.">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="page">
+    <!-- Header -->
     <header class="header">
       <div class="container header__inner">
         <div class="header__logo">
           <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='88' height='88'><rect rx='16' width='88' height='88' fill='%230f62fe'/><text x='50%' y='54%' alignment-baseline='middle' text-anchor='middle' font-family='Arial' font-size='36' fill='white'>Н</text></svg>" alt="Новиков">
           <div>
             <div>Новиков</div>
-            <div style="font-size:12px;color:var(--muted)">Проекты & консультации</div>
+            <div class="header__subtitle">Проекты & консультации</div>
           </div>
         </div>
         <nav class="header__nav">
-          <ul style="display:flex;gap:18px;align-items:center">
+          <ul>
             <li><a href="#about">О проекте</a></li>
             <li><a href="#novikov">Новиков</a></li>
             <li><a href="#contact">Контакты</a></li>
@@ -30,16 +30,18 @@
         </div>
       </div>
     </header>
+
+    <!-- Hero Section -->
     <section class="hero">
       <div class="container hero__grid">
-        <div>
+        <div class="hero__content">
           <h1 class="hero__title">Новиков — идеи, которые работают</h1>
           <p class="hero__lead">Коротко о том, кто такой Новиков: эксперт по продуктам, консультациям и запуску проектов. Помогаю делать понятные продукты быстрее.</p>
           <div class="hero__actions">
             <button class="btn btn--primary">Получить консультацию</button>
             <button class="btn btn--ghost">Узнать подробнее</button>
           </div>
-          <div style="margin-top:22px;color:var(--muted)">
+          <div class="hero__services">
             <strong>Услуги:</strong> стратегия продукта · запуск MVP · дизайн-ревью · коучинг для команд
           </div>
         </div>
@@ -48,11 +50,13 @@
         </div>
       </div>
     </section>
+
+    <!-- About Section -->
     <section id="about" class="about">
       <div class="container">
-        <h2>Что важного</h2>
-        <p style="color:var(--muted);margin-top:8px">Пара тезисов о подходе, опыте и результатах.</p>
-        <div class="about__cards" style="margin-top:18px">
+        <h2 class="about__title">Что важного</h2>
+        <p class="about__lead">Пара тезисов о подходе, опыте и результатах.</p>
+        <div class="about__cards">
           <article class="about__card">
             <h3 class="about__card-title">Практический опыт</h3>
             <p class="about__card-text">Более 10 лет в продукте: от идеи до выхода на рынок. Команды 3–50 человек.</p>
@@ -68,48 +72,53 @@
         </div>
       </div>
     </section>
+
+    <!-- Novikov Section -->
     <section id="novikov" class="novikov">
       <div class="container novikov__wrap">
         <div>
           <img class="novikov__photo" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='720' height='480'><rect width='720' height='480' rx='20' fill='%23f3f4f6'/><text x='50%' y='50%' text-anchor='middle' font-family='Arial' font-size='28' fill='%236b7280'>Фото Новикова</text></svg>" alt="Новиков фото">
         </div>
-        <div>
+        <div class="novikov__info">
           <h2>Андрей Новиков</h2>
           <p class="novikov__bio">Андрей — практик продуктовой разработки и консультант. Работал с командами в fintech, edtech и SaaS. Сосредоточен на быстрой валидации гипотез и построении процессов, которые масштабируются.</p>
-          <ul style="margin-top:16px;color:var(--muted)">
-            <li>✅ Запускал MVP, которые проходили от 0 до первых пользователей за 3–6 месяцев</li>
-            <li>✅ Настраивал процессы продукта и аналитики</li>
-            <li>✅ Проводит дизайн-ревью и технические сессии</li>
+          <ul class="novikov__list">
+            <li>Запускал MVP, которые проходили от 0 до первых пользователей за 3–6 месяцев</li>
+            <li>Настраивал процессы продукта и аналитики</li>
+            <li>Проводит дизайн-ревью и технические сессии</li>
           </ul>
-          <div style="margin-top:18px">
-            <a class="btn btn--primary" href="#contact">Связаться</a>
-          </div>
+          <a class="btn btn--primary" href="#contact">Связаться</a>
         </div>
       </div>
     </section>
+
+    <!-- Contact Section -->
     <section id="contact" class="contact">
       <div class="container">
-        <h2>Написать</h2>
-        <p style="color:var(--muted);margin-top:8px">Оставьте заявку — ответим в течение рабочего дня.</p>
+        <h2 class="contact__title">Написать</h2>
+        <p class="contact__lead">Оставьте заявку — ответим в течение рабочего дня.</p>
         <form class="contact__form" action="#" method="post" onsubmit="event.preventDefault(); alert('Форма отправлена (демо)')">
           <div class="form__row">
             <input class="form__input" type="text" name="name" placeholder="Имя" required>
             <input class="form__input" type="email" name="email" placeholder="E‑mail" required>
           </div>
           <textarea class="form__input" name="message" placeholder="Кратко о запросе" rows="5" required></textarea>
-          <div style="display:flex;justify-content:space-between;align-items:center;gap:12px">
-            <div style="color:var(--muted);font-size:13px">Нажимая «Отправить», вы принимаете условия конфиденциальности.</div>
+          <div class="form__footer">
+            <div class="form__info">Нажимая «Отправить», вы принимаете условия конфиденциальности.</div>
             <button class="btn btn--primary" type="submit">Отправить</button>
           </div>
         </form>
       </div>
     </section>
+
+    <!-- Footer -->
     <footer class="footer">
-      <div class="container" style="display:flex;justify-content:space-between;align-items:center">
+      <div class="container footer__inner">
         <div>© Новиков — Все права защищены</div>
-        <div style="color:var(--muted)">Политика конфиденциальности · Условия</div>
+        <div>Политика конфиденциальности · Условия</div>
       </div>
     </footer>
   </div>
 </body>
 </html>
+
